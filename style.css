@@ -1,0 +1,431 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #0c1013;
+  --panel: #1f1f1f;
+  --border: #494949;
+  --text: #f5f5f5;
+  --muted: #a8a8a8;
+  --blue: #0095f6;
+  --button-blue: #174477;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: 65.4% 34.6%;
+  min-height: calc(100vh - 64px);
+}
+
+/* LEFT SECTION */
+
+.promo {
+  position: relative;
+  min-height: 720px;
+  overflow: hidden;
+  border-right: 1px solid #555;
+}
+
+.instagram-logo {
+  position: absolute;
+  top: 22px;
+  left: 20px;
+  width: 57px;
+  height: 57px;
+}
+
+.instagram-logo svg {
+  width: 100%;
+  height: 100%;
+}
+
+.promo-content {
+  position: absolute;
+  top: 88px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.promo h1 {
+  font-size: clamp(28px, 2.75vw, 48px);
+  line-height: 1.32;
+  font-weight: 400;
+  letter-spacing: -1.2px;
+}
+
+.promo h1 span {
+  background: linear-gradient(
+    90deg,
+    #ff654b,
+    #ff0084,
+    #c135b9
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.photo-stack {
+  position: relative;
+  width: 490px;
+  height: 440px;
+  max-width: 90%;
+  margin: 48px auto 0;
+}
+
+.photo {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #252525;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.photo-back {
+  top: 65px;
+  width: 175px;
+  height: 300px;
+}
+
+.photo-left {
+  left: 25px;
+  transform: rotate(-5deg);
+}
+
+.photo-right {
+  right: 20px;
+  transform: rotate(4deg);
+}
+
+.photo-front {
+  top: 0;
+  left: 50%;
+  width: 242px;
+  height: 428px;
+  transform: translateX(-50%);
+  z-index: 2;
+  box-shadow: 0 10px 35px #0005;
+}
+
+.photo-front img {
+  object-position: center;
+}
+
+.story-reaction {
+  position: absolute;
+  top: 30px;
+  left: -40px;
+  padding: 11px 15px;
+  border-radius: 22px;
+  background: white;
+  color: #222;
+  font-size: 19px;
+  transform: rotate(-9deg);
+}
+
+.photo-bottom {
+  position: absolute;
+  bottom: 19px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.photo-bottom span:first-child {
+  height: 30px;
+  width: 68%;
+  border: 3px solid white;
+  border-radius: 22px;
+}
+
+.heart {
+  font-size: 38px;
+  color: white;
+}
+
+.floating-heart {
+  position: absolute;
+  top: 220px;
+  left: 0;
+  z-index: 3;
+  color: #ff087b;
+  font-size: 65px;
+  transform: rotate(-12deg);
+}
+
+.floating-star {
+  position: absolute;
+  top: 118px;
+  right: 5px;
+  z-index: 3;
+  padding: 8px 12px;
+  border-radius: 25px;
+  background: #16c75a;
+  color: white;
+  font-size: 23px;
+}
+
+.floating-avatar {
+  position: absolute;
+  right: 0;
+  bottom: 110px;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 67px;
+  height: 67px;
+  border: 4px solid #ff168b;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a8ef9d, #e6aa63);
+  color: #333;
+  font-size: 33px;
+}
+
+/* RIGHT LOGIN PANEL */
+
+.login-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 9%;
+  background: var(--panel);
+}
+
+.login-box {
+  width: 100%;
+  max-width: 520px;
+}
+
+.login-box h2 {
+  margin-bottom: 22px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+#loginForm input {
+  width: 100%;
+  height: 58px;
+  padding: 0 15px;
+  border: 1px solid #505050;
+  border-radius: 16px;
+  outline: none;
+  background: transparent;
+  color: white;
+  font-size: 14px;
+}
+
+#loginForm input::placeholder {
+  color: #b5c4d5;
+}
+
+#loginForm input:focus {
+  border-color: #858585;
+}
+
+.password-wrap {
+  position: relative;
+}
+
+.password-wrap input {
+  padding-right: 65px !important;
+}
+
+.show-password {
+  position: absolute;
+  top: 0;
+  right: 12px;
+  height: 100%;
+  display: none;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.password-wrap:focus-within .show-password {
+  display: block;
+}
+
+.login-button {
+  height: 43px;
+  margin-top: 11px;
+  border: none;
+  border-radius: 25px;
+  background: var(--button-blue);
+  color: #8298b5;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background: #20548e;
+}
+
+
+.forgot {
+  display: block;
+  margin-top: 23px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 45px 0 23px;
+  color: #a8a8a8;
+  font-size: 12px;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #424242;
+}
+
+.facebook-button,
+.create-button {
+  width: 100%;
+  height: 43px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.facebook-button {
+  border: none;
+  background: #292929;
+  color: #d4d4d4;
+}
+
+.facebook-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 14px;
+  height: 14px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: #0095f6;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.create-button {
+  margin-top: 11px;
+  border: 1px solid #0095f6;
+  background: transparent;
+  color: #0095f6;
+}
+
+.create-button:hover {
+  background: #0095f610;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 25px;
+  color: #dedede;
+  font-size: 14px;
+}
+
+.meta-symbol {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* FOOTER */
+
+.footer {
+  min-height: 64px;
+  padding: 22px 15px;
+  border-top: 1px solid #414141;
+  background: var(--background);
+}
+
+.footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 17px;
+}
+
+.footer a {
+  color: #b4b4b4;
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.footer a:hover,
+.forgot:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVE LAYOUT */
+
+@media (max-width: 900px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .promo {
+    display: none;
+  }
+
+  .login-panel {
+    min-height: calc(100vh - 64px);
+    padding: 35px 24px;
+  }
+
+  .login-box {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-panel {
+    padding: 25px 20px;
+  }
+
+  .footer nav {
+    gap: 10px 13px;
+  }
+}
